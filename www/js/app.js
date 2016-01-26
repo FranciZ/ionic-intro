@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic'])
 
+// initialisation method
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -31,8 +32,15 @@ angular.module('starter', ['ionic'])
         templateUrl : 'views/gallery.html',
         controller:'GalleryCtrl'
         
+    }).state('portfolio',{
+       
+        url : '/portfolio',
+        templateUrl : 'views/portfolio.html',
+        controller:'PortfolioCtrl'
+        
     });
     
+    // setting the default state
     $urlRouterProvider.otherwise('/gallery');
     
 });
